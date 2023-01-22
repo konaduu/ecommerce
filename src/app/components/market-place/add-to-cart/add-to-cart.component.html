@@ -1,0 +1,131 @@
+<!--Cart Section-->
+<section class="mt-5">
+     <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="cart">
+                        <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-light">
+                            <tr>
+                                <th scope="col" >All</th>
+                                <th scope="col" >Image</th>
+                                <th scope="col" >Product Name</th>
+                                <th scope="col" >Price</th>
+                                <th scope="col" >Qty</th>
+                                <th scope="col" >Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let item of cartItems">
+                                <td>
+                                    <input class="check-input" type="checkbox" value="">
+                                </td>
+                                <td>
+                                <div class="main">
+                                    <!-- class="d-flex" -->
+                                    <div > 
+                                    <img src="{{item.Productimg }}" alt="" width="100" height="100"/>
+                                    </div>
+                                </div>
+                                </td>
+                                <td>
+                                    <div class="des">
+                                        <p>{{item.ProductName }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                <h6>{{ item.ProductPrice | currency:'GH¢' }}</h6>
+                                </td>
+                                <td>
+                              <input type ="number"  [(ngModel)] = "item.quanity" min = "1">
+                                </td>
+                                <td>
+                                  <span class="material-icons" (click) = "removeFromCart(item)"><i class="bi bi-trash3-fill"></i></span>
+                                </td>
+                                
+                            </tr>
+                            <!----->
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4"  *ngFor="let item of cartItems" >
+                    <div class="checkout">
+                      <ul>
+                        <li class="subtotal">
+                          subtotal
+                          <span>{{ total}}</span>
+                        </li>
+                        <li class="cart-total">Total <span>{{total}}</span></li>
+                      </ul>
+                      <a href="checkout" class="proceed-btn">Proceed to Checkout</a>
+                    </div>
+                </div>
+              </div>
+        </div>
+ </section>
+
+ <!-- <div class="container product-list">
+  <h3>More Like This</h3>
+  <a routerLink="products" class="ViewMoreBtn" ><i class="bi bi-arrow-down-right"></i> View more</a>
+  <div class="row">
+  <div class="col-lg-3" *ngFor = "let product of products; index as i"> 
+      <div class="product-item" *ngIf = "i <=3">
+          <span class="top-sale">top sale</span>
+          <ul class="product-icon-top">
+              <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+          </ul>
+          <a href="single-shop.html" class="product-img"><img src="{{product.Productimg}}" alt="product"></a>
+          <div class="product-item-cover">
+              <div class="price-cover">
+                  <div class="new-price">{{product.ProductPrice | currency:'GH$'}}</div>
+                
+              </div>
+              <h6 class="prod-title"><a >{{product.ProductName}} </a></h6>
+              <a class="btn" [routerLink]="['/products',product.id]" class="btn btn btn-outline-warning btn-lg banner-btn">Buy Now</a>
+          </div>
+          <div class="prod-info">
+              <ul class="prod-list">
+                  {{product.ProductSize}}
+                  {{product.ProductFlavour}}
+              </ul>
+          </div>
+  </div>
+</div>
+
+</div> -->
+
+
+<!-- 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Product name</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>{{ orderItem?.product?.ProductName }}</td>
+        <td>{{ orderItem?.product?.ProductPrice }}</td>
+        <td>{{ orderItem?.qty }}</td>
+        <td>{{ orderItem?.sub_total }}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>  -->

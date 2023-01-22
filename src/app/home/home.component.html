@@ -1,0 +1,85 @@
+
+<!-- hero section start -->
+ <section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark hero" style="height:100vh; background-size: cover; background-image: url(assets/img/pet_supplies.jpg);">
+    <div class="container-fluid">
+       <div class="row  justify-content-center align-items-center d-flex text-center h-100">
+         <div class="col-12 col-md-8  h-50 ">
+             <h1 class="display-2  text-light mb-2 mt-5"><strong>What Your Pet Needs, <br> When they Need it </strong> </h1>
+             <p class="lead  text-light mb-5"> We provide exciting and must-have products to meet your pets needs</p>
+             <p><a href="products" class="btn-lg buttonn">Buy Now</a></p>  
+         </div>
+      
+       </div>
+     </div>
+ </section>
+  <!-- hero section end -->
+  
+  <!-- -----------------------------------------------------slider -->
+  <div class="cards-list">
+    
+    <div class="card 1">
+      <div class="card_image"> <img src="assets/img/grooming.png" alt="Image"></div>
+      <div class="card_title">
+        <p>Card Title</p>
+      </div>
+    </div>
+    
+      <div class="card 2">
+      <div class="card_image">
+        <img src="assets/img/health.jpeg" alt="Image" >
+        </div>
+      <div class="card_title">
+        <p>Card Title</p>
+      </div>
+    </div>
+    
+    <div class="card 3">
+      <div class="card_image">
+        <img src="assets/img/swag.jpg" alt="Image">
+      </div>
+      <div class="card_title">
+        <p>Card Title</p>
+      </div>
+    </div>
+      
+      <div class="card 4">
+      <div class="card_image">
+        <img src="assets/img/toy.png" alt="Image" >
+        </div>
+      <div class="card_title title-black">
+        <p>Card Title</p>
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- ----------------------------------------------------slider end -->
+  <div class="container product-list">
+    <h3>Our Products</h3>
+    <a routerLink="products" class="ViewMoreBtn" ><i class="bi bi-arrow-down-right"></i> View more</a>
+    <div class="row">
+    <div class="col-lg-3" *ngFor = "let product of products; index as i"> 
+        <div class="product-item" *ngIf = "i <=3">
+            <span class="top-sale">top sale</span>
+            <ul class="product-icon-top">
+                <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            </ul>
+            <a href="single-shop.html" class="product-img"><img src="{{product.Productimg}}" alt="product"></a>
+            <div class="product-item-cover">
+                <div class="price-cover">
+                    <div class="new-price">{{product.ProductPrice | currency:'GH$'}}</div>
+                    <!-- <div class="old-price">$1.799</div> -->
+                </div>
+                <h6 class="prod-title"><a >{{product.ProductName}} </a></h6>
+                <a class="btn" [routerLink]="['/products',product.id]" class="btn btn btn-outline-warning btn-lg banner-btn">Buy Now</a>
+            </div>
+            <div class="prod-info">
+                <ul class="prod-list">
+                    {{product.ProductSize}}
+                    {{product.ProductFlavour}}
+                </ul>
+            </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,54 @@
+<div  class="container">
+ <!-- first nav bar  -->
+ <nav class="navbar first-header">
+    <div class="container-fluid">
+        <div class="header-right">
+            <ul class="header-cont" >
+                <li class="header-list"><a class ="header-name" href="+233540945230"><i class="bi bi-telephone-fill header-icon-right" ></i>+233540945230</a></li> 
+                <li class="header-list"><a class ="header-name" href="mailto:thepuppypalacegh@gmail.com"><i class="bi bi-envelope-fill header-icon-right"></i>thepuppypalacegh@gmail.com</a></li>
+            </ul>
+        </div>
+        <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link header-name" href="#"><i class="bi bi-heart-fill header-icon-left"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link header-name" href="#"><i class="bi bi-person-fill header-icon-left"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link header-name" routerLink="add-to-cart"><i class="bi bi-cart-fill header-icon-left"></i></a>
+        </li>
+        </ul>
+    </div>
+  </nav>
+
+  <hr>
+
+<!-- Navbar main -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="home" >
+                <img src="assets/img/logo.png" alt="Bootstrap" width="100" height="100">
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="home" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="products" routerLinkActive="active-link" >Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="about" routerLinkActive="active-link" >About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="contact" routerLinkActive="active-link" >Contact US</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</div>
